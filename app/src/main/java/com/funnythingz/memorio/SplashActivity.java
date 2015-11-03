@@ -29,7 +29,10 @@ public class SplashActivity extends AppCompatActivity {
                 mHandler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        startMainActivity();
+                        if (!isFinishing()) {
+                            startMainActivity();
+                            finish();
+                        }
                     }
                 }, 3000);
             }
