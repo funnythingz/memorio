@@ -12,7 +12,6 @@ import java.util.Random;
 public class SplashActivity extends AppCompatActivity {
 
     private ImageView mImageView;
-
     private Handler mHandler = new Handler();
 
     @Override
@@ -20,8 +19,10 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_splash);
+
+        final int color = randomColor();
         mImageView = (ImageView)findViewById(R.id.logoImageView);
-        mImageView.getRootView().setBackgroundColor(randomColor());
+        mImageView.getRootView().setBackgroundColor(color);
 
         new Thread(new Runnable() {
             @Override
@@ -30,7 +31,7 @@ public class SplashActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         if (!isFinishing()) {
-                            startMainActivity();
+                            startMainActivity(color);
                             finish();
                         }
                     }
@@ -50,7 +51,9 @@ public class SplashActivity extends AppCompatActivity {
         return Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
     }
 
-    private void startMainActivity() {
-        startActivity(new Intent(this, MainActivity.class));
+    private void startMainActivity(int color) {
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("color", color);
+        startActivity(intent);
     }
 }
