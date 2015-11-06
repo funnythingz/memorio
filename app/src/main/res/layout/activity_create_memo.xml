@@ -9,6 +9,10 @@ tools:context="com.funnythingz.memorio.CreateMemoActivity">
         android:layout_height="match_parent"
         android:inputType="textMultiLine"
         android:ems="10"
+        android:textSize="24dp"
+        android:textColor="#334455"
         android:background="#ffffff"
+        android:gravity="left|top"
+        android:padding="20dp"
         />
 </FrameLayout>
