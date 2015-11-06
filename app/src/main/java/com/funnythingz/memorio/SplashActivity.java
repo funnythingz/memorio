@@ -52,7 +52,7 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void startMainActivity(int color) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, HomeActivity.class);
         intent.putExtra("color", color);
         startActivity(intent);
     }
