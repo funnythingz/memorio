@@ -27,4 +27,7 @@ dependencies {
 
     // Gson
     compile 'com.google.code.gson:gson:2.5'
+
+    // ButterKnife
+    compile 'com.jakewharton:butterknife:7.0.1'
 }
